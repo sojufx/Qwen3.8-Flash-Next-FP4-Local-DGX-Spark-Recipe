@@ -9,7 +9,7 @@ import urllib.request
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-url", default="http://127.0.0.1:8001/v1")
-    parser.add_argument("--model", default="ornith")
+    parser.add_argument("--model", default="qwen38-flash-next-fp4-local")
     args = parser.parse_args()
     headers = {"Content-Type": "application/json"}
     if os.environ.get("API_KEY"):

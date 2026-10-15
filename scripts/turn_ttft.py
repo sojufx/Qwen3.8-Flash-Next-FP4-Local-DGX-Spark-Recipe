@@ -24,7 +24,7 @@ def stream_ttft(api, model, messages, key=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--api", default="http://127.0.0.1:8001/v1/chat/completions")
-    ap.add_argument("--model", default="ornith")
+    ap.add_argument("--model", default="qwen38-flash-next-fp4-local")
     ap.add_argument("--key", default=None)
     ap.add_argument("--sessions", type=int, default=3)
     a = ap.parse_args()

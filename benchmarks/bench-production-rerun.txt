@@ -1,4 +1,4 @@
-server_info: {"max_model_len": 262144, "root": "/root/.cache/huggingface/hub/models--nvidia--Qwen3.8-Flash-Next-FP4-Local/snapshots/b9ce18a6887e18c089fdea8509a33e63429a3300", "served_model": "ornith"}
+server_info: {"max_model_len": 262144, "root": "/root/.cache/huggingface/hub/models--nvidia--Qwen3.8-Flash-Next-FP4-Local/snapshots/b9ce18a6887e18c089fdea8509a33e63429a3300", "served_model": "qwen38-flash-next-fp4-local"}
 max_tokens: 256 temperature: 0.0 repeat: 2 concurrency: [1, 4]
 
 === prompt: agent_tool ===

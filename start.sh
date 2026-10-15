@@ -45,7 +45,7 @@ docker run -d --pull never --name "$NAME" --init --restart unless-stopped \
     -e B12X_W4A16_A4_PREFILL=1 \
     --entrypoint /usr/local/bin/vllm "$IMAGE" \
     serve "/root/.cache/huggingface/$SNAPSHOT" \
-    --host 127.0.0.1 --port 8001 --served-model-name ornith \
+    --host 127.0.0.1 --port 8001 --served-model-name qwen38-flash-next-fp4-local \
     --tensor-parallel-size 1 --pipeline-parallel-size 1 \
     --mamba-cache-mode align --enable-prefix-caching --enable-chunked-prefill \
     --dtype bfloat16 --kv-cache-dtype fp8 --quantization modelopt_mixed \

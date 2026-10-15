@@ -16,7 +16,7 @@ const manager = new DecodeBenchManager(
 );
 const job = manager.start({
   sparkId: "nvidia-fp4-local-k3", lanIp: "127.0.0.1", port: 8001,
-  modelId: "ornith", concurrencies: [1, 2, 4], maxTokens: 400,
+  modelId: "qwen38-flash-next-fp4-local", concurrencies: [1, 2, 4], maxTokens: 400,
   promptType: "structured", debug: true,
 });
 while (true) {

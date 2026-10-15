@@ -23,7 +23,7 @@ This repository contains launch and verification scripts, not model weights or a
 | Prefix cache | Enabled, Mamba cache mode `align` |
 | PLE table | Disk-backed, `io_uring` |
 | Kernels | B12X linear, MoE and GDN |
-| Backend | `127.0.0.1:8001`, alias `ornith` |
+| Backend | `127.0.0.1:8001`, alias `qwen38-flash-next-fp4-local` |
 | Tool parser / reasoning parser | `qwen3_xml` / `qwen3` |
 | Thinking | Off by default; can be requested explicitly |
 | Container restart | `unless-stopped` |
@@ -80,7 +80,7 @@ Keep your previous model image, launcher, checkpoint and caches for rollback. Ne
 
 ## Stable Gateway Contract
 
-Keep one public URL, API key and model alias across model swaps. Route your authenticated gateway to `http://127.0.0.1:8001`; the backend alias is `ornith`. No personal hostname, IP address or serving key is included here.
+Keep one public URL, API key and model alias across model swaps. Route your authenticated gateway to `http://127.0.0.1:8001`; the backend alias is `qwen38-flash-next-fp4-local`. No personal hostname, IP address or serving key is included here.
 
 Our existing production gateway supplies the policy below. **The gateway implementation is not bundled. These are proxy-side settings, not settings installed by `start.sh`.** Deploy equivalent middleware or configure your existing gateway if you need them.
 
@@ -106,7 +106,7 @@ Run on the Spark against loopback so network/proxy overhead does not change the 
 
 ```bash
 python3 scripts/benchmark_flash_next.py \
-  --api http://127.0.0.1:8001/v1/chat/completions --model ornith \
+  --api http://127.0.0.1:8001/v1/chat/completions --model qwen38-flash-next-fp4-local \
   --all-prompts --concurrency 1,4 --repeat 2 --max-tokens 256 --temperature 0
 
 python3 scripts/turn_ttft.py --sessions 3

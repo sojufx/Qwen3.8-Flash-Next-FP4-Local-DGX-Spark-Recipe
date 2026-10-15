@@ -2,6 +2,8 @@
 
 Recorded during the October 15-16, 2026 deployment session. One GB10, pinned model/runtime from `start.sh`, FP8 KV, 262,144 context limit, four scheduler slots, disk-backed PLE, GPU memory utilization 0.80. All benchmark requests go directly to loopback, thinking off. These are local speed results, not quality scores or cross-hardware promises.
 
+The deployment-specific serving alias in the archived logs has been normalized to `qwen38-flash-next-fp4-local` for this public recipe. Timing, token counts and generated output are unchanged; the logs are not byte-for-byte originals.
+
 ## Four-Prompt Suite: K=3 Versus K=4
 
 Two repeats per cell, reported median. 256-token cap, temperature 0, non-streaming. Completion tokens divided by request wall time at C1; total completion tokens divided by concurrent wall time at C4. Prefill is included. No failed requests in these runs.

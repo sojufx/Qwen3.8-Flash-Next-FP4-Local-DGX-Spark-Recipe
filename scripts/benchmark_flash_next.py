@@ -147,7 +147,7 @@ def print_row(row):
 def main():
     parser = argparse.ArgumentParser(description="Fixed prompt-suite benchmark for OpenAI-compatible vLLM servers.")
     parser.add_argument("--api", default="http://127.0.0.1:8000/v1/chat/completions")
-    parser.add_argument("--model", default="ornith")
+    parser.add_argument("--model", default="qwen38-flash-next-fp4-local")
     parser.add_argument("--key", default=None)
     parser.add_argument("--prompt-name", choices=sorted(PROMPTS), default="generic")
     parser.add_argument("--all-prompts", action="store_true")
