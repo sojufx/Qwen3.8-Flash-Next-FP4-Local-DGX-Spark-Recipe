@@ -1,0 +1,50 @@
+server_info: {"max_model_len": 262144, "root": "/root/.cache/huggingface/hub/models--nvidia--Qwen3.8-Flash-Next-FP4-Local/snapshots/b9ce18a6887e18c089fdea8509a33e63429a3300", "served_model": "ornith"}
+max_tokens: 256 temperature: 0.0 repeat: 2 concurrency: [1, 4]
+
+=== prompt: agent_tool ===
+prompt_chars: 396
+run 1/2
+C1: aggregate=40.0 tok/s wall=6.40s per_stream=[40.0] prompt_tokens=[95] output_tokens=[256] finish=['length']
+C4: aggregate=88.6 tok/s wall=11.55s per_stream=[22.4,23.3,22.6,22.2] prompt_tokens=[95, 95, 95, 95] output_tokens=[256, 256, 256, 256] finish=['length', 'length', 'length', 'length']
+run 2/2
+C1: aggregate=40.2 tok/s wall=6.37s per_stream=[40.2] prompt_tokens=[95] output_tokens=[256] finish=['length']
+C4: aggregate=86.7 tok/s wall=11.81s per_stream=[23.4,21.7,22.5,22.2] prompt_tokens=[95, 95, 95, 95] output_tokens=[256, 256, 256, 256] finish=['length', 'length', 'length', 'length']
+summary_median_by_concurrency
+C1: median=40.1 tok/s values=[40.0, 40.2]
+C4: median=87.7 tok/s values=[88.6, 86.7]
+
+=== prompt: code_edit ===
+prompt_chars: 663
+run 1/2
+C1: aggregate=50.9 tok/s wall=5.03s per_stream=[50.9] prompt_tokens=[175] output_tokens=[256] finish=['length']
+C4: aggregate=112.6 tok/s wall=9.10s per_stream=[28.9,29.2,28.1,28.1] prompt_tokens=[175, 175, 175, 175] output_tokens=[256, 256, 256, 256] finish=['length', 'length', 'length', 'length']
+run 2/2
+C1: aggregate=51.0 tok/s wall=5.02s per_stream=[51.0] prompt_tokens=[175] output_tokens=[256] finish=['length']
+C4: aggregate=117.5 tok/s wall=8.72s per_stream=[29.4,30.0,29.6,29.4] prompt_tokens=[175, 175, 175, 175] output_tokens=[256, 256, 256, 256] finish=['length', 'length', 'length', 'length']
+summary_median_by_concurrency
+C1: median=51.0 tok/s values=[50.9, 51.0]
+C4: median=115.0 tok/s values=[112.6, 117.5]
+
+=== prompt: generic ===
+prompt_chars: 110
+run 1/2
+C1: aggregate=53.8 tok/s wall=3.66s per_stream=[53.8] prompt_tokens=[32] output_tokens=[197] finish=['stop']
+C4: aggregate=115.3 tok/s wall=7.34s per_stream=[34.9,31.2,30.2,30.2] prompt_tokens=[32, 32, 32, 32] output_tokens=[256, 197, 197, 197] finish=['length', 'stop', 'stop', 'stop']
+run 2/2
+C1: aggregate=53.8 tok/s wall=3.66s per_stream=[53.8] prompt_tokens=[32] output_tokens=[197] finish=['stop']
+C4: aggregate=125.8 tok/s wall=6.40s per_stream=[32.7,31.5,33.8,30.8] prompt_tokens=[32, 32, 32, 32] output_tokens=[197, 197, 214, 197] finish=['stop', 'stop', 'stop', 'stop']
+summary_median_by_concurrency
+C1: median=53.8 tok/s values=[53.8, 53.8]
+C4: median=120.6 tok/s values=[115.3, 125.8]
+
+=== prompt: long_context_code ===
+prompt_chars: 890
+run 1/2
+C1: aggregate=41.2 tok/s wall=6.22s per_stream=[41.2] prompt_tokens=[257] output_tokens=[256] finish=['length']
+C4: aggregate=94.3 tok/s wall=10.86s per_stream=[23.9,24.7,24.7,23.6] prompt_tokens=[257, 257, 257, 257] output_tokens=[256, 256, 256, 256] finish=['length', 'length', 'length', 'length']
+run 2/2
+C1: aggregate=41.2 tok/s wall=6.22s per_stream=[41.2] prompt_tokens=[257] output_tokens=[256] finish=['length']
+C4: aggregate=94.4 tok/s wall=10.85s per_stream=[24.5,25.2,23.6,24.7] prompt_tokens=[257, 257, 257, 257] output_tokens=[256, 256, 256, 256] finish=['length', 'length', 'length', 'length']
+summary_median_by_concurrency
+C1: median=41.2 tok/s values=[41.2, 41.2]
+C4: median=94.4 tok/s values=[94.3, 94.4]
